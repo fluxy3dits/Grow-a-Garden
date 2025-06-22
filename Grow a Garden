@@ -1,0 +1,28 @@
+-- Load the Orion Library
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/jensonhirst/Orion/main/source'))()
+
+-- Create the main window
+local Window = OrionLib:MakeWindow({
+    Name = "main",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "PetSpawnerConfig"
+})
+
+-- Create a tab called "Main"
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+-- Add a button to the Main tab called "Pet Spawner"
+MainTab:AddButton({
+	Name = "Pet Spawner",
+	Callback = function()
+		print("Pet Spawner button pressed")
+	end
+})
+
+-- Initialize the library (required)
+OrionLib:Init()
